@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Materials/Raymarch.tres" type="Material" id=1]
+
+[sub_resource type="CubeMesh" id=3]
+size = Vector3( 8, 8, 8 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="CubeMesh" id=4]
+material = SubResource( 5 )
+size = Vector3( 4, 4, 4 )
+
+[node name="Scene" type="Spatial"]
+
+[node name="Domain" type="MeshInstance" parent="."]
+material_override = ExtResource( 1 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Cube" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.07724 )
+mesh = SubResource( 4 )
+material/0 = null
